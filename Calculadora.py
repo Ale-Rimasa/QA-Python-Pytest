@@ -2,10 +2,12 @@ def sumar( a , b):
     return a + b
 
 def restar (a , b):
-    return a + b
+    return a - b
 
 def dividir (a, b):
-    return a // b #Con 2 comillas de vuelve el número entero
+    if b == 0:
+        raise ValueError("Erorr al dividir por cero")
+    return a / b #Con 2 comillas de vuelve el número entero
 
 def multiplicar (a , b):
     return a * b
@@ -51,7 +53,7 @@ usuario ={
     "jose": {"edad": 66}
 }
 
-def pedirNombre():
+"""def pedirNombre():
     try:
         nombre = input('Ingrese el nombre: ')
         edad = usuario[nombre]["edad"] #Almaceno la edad que me ingresa el nombre del usuario
@@ -59,4 +61,4 @@ def pedirNombre():
     except KeyError:
         print("Error : No se encontro la edad de ese nombre")
 
-pedirNombre()
+pedirNombre()"""
