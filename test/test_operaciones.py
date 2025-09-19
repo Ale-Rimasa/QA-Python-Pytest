@@ -25,3 +25,13 @@ def test_division_por_cero():
 
 def test_sumar_varios(a,b,esperado):
      assert Calculadora.sumar(a,b) == esperado
+
+
+def test_restar_con_fixture(numeros):
+     a,b = numeros
+     assert Calculadora.restar(a,b) == 0
+
+
+def test_sumar_con_fixture(numeros):
+     a,b = numeros
+     assert Calculadora.sumar(a,b) == 10
