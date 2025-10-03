@@ -14,7 +14,7 @@ def test_division_por_cero():
           Calculadora.dividir(10,0)                        #raises: devuelve las expresiones de errores.              
 
 
-#Marcadores
+#Marcadores = Una etiqueta que permite agrupar o filtrar tests.
 
 @pytest.mark.parametrize("a,b,esperado",[
     (2,5,7), #numero positivo
@@ -36,7 +36,21 @@ def test_sumar_con_fixture(numeros):
      a,b = numeros
      assert Calculadora.sumar(a,b) == 10
 
+@pytest.mark.markersPersonalizado
+def test_sumar_markersPersonalizado():
+     assert Calculadora.sumar(1,3) == 4
 
+def test_estructura_dicc():        #Con esta función compruebo la data que me viene.
+     data = {"nombre":"Luisa", "edad": 34}
+     assert "nombre" in data
+     assert "edad" in data
+
+     assert isinstance(data["nombre"], str )        #Permite pasar como primer argumento la clave de la data y de que tipo tiene que ser
+     assert isinstance(data["edad"], int )
+
+def test_estructura_list():
+     items = [{"id":1, "id": 2}]
+     assert all("id" in item for item in items) #Esta palabra reservada "all" nos permite iterar en la lista y corroborar que tengan la clave que tengan.
 
 #Sistema de login
      #Para el login se necesita usuario y password
